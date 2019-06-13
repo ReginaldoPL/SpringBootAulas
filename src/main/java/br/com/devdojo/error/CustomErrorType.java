@@ -1,4 +1,4 @@
-package br.com.devdojo.demo.error;
+package br.com.devdojo.error;
 
 public class CustomErrorType {
     private String errorMessage;

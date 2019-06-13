@@ -1,4 +1,4 @@
-package br.com.devdojo.demo.model;
+package br.com.devdojo.model;
 
 import javax.persistence.Entity;
 

@@ -1,4 +1,4 @@
-package br.com.devdojo.demo.util;
+package br.com.devdojo.util;
 
 import org.springframework.stereotype.Component;
 
