@@ -7,6 +7,7 @@ import br.com.devdojo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -44,6 +45,7 @@ public class StudentEndpoint {
 
 
     @PostMapping
+    @Transactional // por padrão só faz rollback com exception do tipo checked, senã otem que por no construtor??
     public ResponseEntity<?>  save(@RequestBody Student student) {
         return new ResponseEntity<>(studentDAO.save(student), HttpStatus.OK);
     }
@@ -66,7 +68,7 @@ public class StudentEndpoint {
     }
 
     private void verifyIfStudentExists(Long id){
-        if (studentDAO.findById(id).isPresent()){
+        if (!studentDAO.findById(id).isPresent()){
             throw new ResourceNotFoundException("Student Not Found for ID: " + id);
         }
 
