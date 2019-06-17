@@ -3,7 +3,7 @@
 
 package br.com.devdojo.error;
 
-public class ResourceNotFoundDetails  extends ErrorDetail  {
+public class ResourceNotFoundDetails  extends ErrorDetails {
 
 
 
