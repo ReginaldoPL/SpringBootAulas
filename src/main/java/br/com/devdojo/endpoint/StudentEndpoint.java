@@ -28,6 +28,8 @@ public class StudentEndpoint {
 
 
     //http://localhost:8080/students?page=1&size=5
+    //http://localhost:8080/students?sort=name,asc
+    //http://localhost:8080/students?page=1&size=15&sort=name,asc
     @RequestMapping
     public ResponseEntity<?>  listAll(Pageable pageable){
         return new ResponseEntity<>(studentDAO.findAll(pageable), HttpStatus.OK);
