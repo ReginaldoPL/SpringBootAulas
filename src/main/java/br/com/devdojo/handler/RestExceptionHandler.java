@@ -27,7 +27,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException rfnException){
        ResourceNotFoundDetails rnfDetails =  ResourceNotFoundDetails.Builder
                 .newBuilder()
-                .timestamp(new Date().getTime())
+               
                 .status(HttpStatus.NOT_FOUND.value())
                 .title("Resource Not found")
                 .detail(rfnException.getMessage())
